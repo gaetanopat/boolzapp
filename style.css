@@ -1,0 +1,216 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+p{
+  margin: 0;
+}
+/* per l'header */
+header{
+  width: 100%;
+  background-color: #eeeeee;
+  border: 0.5px solid rgba(0,0,0, 0.1);
+}
+/* per l'header sinistro e la sezione di sinistra */
+.header_left, .section_left{
+  float:left;
+  width: 30%;
+  border-right: 0.5px solid rgba(0,0,0, 0.2);
+  position: relative;
+}
+/* altezza dell'header */
+.header_left, .header_right{
+  height:60px;
+}
+/* altezza sezioni */
+.section_left, .section_right{
+  height: 596px;
+}
+/* per l'header destro e la sezione di destra */
+.header_right, .section_right{
+  float: left;
+  width: 70%;
+  position: relative;
+}
+/* per il contenitore di destra di tutta la chat */
+div.container_single_chat{
+  height: 536px;
+  background-image: url('https://i.imgur.com/TnNwdvV.jpg');
+  position: relative;
+  overflow-y: auto;
+}
+/* per tutte le immagini del profilo */
+img.profile_img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-left: 30px;
+}
+/* per le icone dell'header, sia della parte di sinistra sia della parte di destra */
+header .header_left_icons, header .header_right_icons{
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+/* per le singole icone dell'header, sia della parte di sinistra sia della parte di destra */
+.header_left_icons i, .header_right_icons i{
+  font-size: 18px;
+  margin-left: 30px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+/* per il container del nome e dell'ultimo accesso e del nome e dei vari messaggi */
+.person{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100px;
+  margin-top: 0;
+}
+/* per il nome della persona */
+.person_name{
+  margin: 0;
+}
+/* per il colore un pò più chiaro dell'ultimo accesso e del messaggio delle persone a sinistra */
+.header_right div.person .last_login, .section_left div.chat .person_message{
+  opacity: 0.6;
+  margin: 0;
+}
+/* clear */
+header::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+/* per trovare una chat */
+div.new_chat{
+  height: 50px;
+  width: 100%;
+  padding: 0 30px;
+  border-bottom: 0.5px solid rgba(0,0,0, 0.2);
+}
+/* per l'input text */
+div.new_chat input{
+  height: 40px;
+  width:80%;
+  margin-top: 5px;
+  border: 0;
+  border-radius: 30px;
+  margin-left: 20px;
+}
+/* per togliere il bordo quando seleziono l'input text */
+input:focus{
+  outline: none;
+}
+/* per l'iconcina del search */
+div.new_chat i{
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.6;
+}
+/* per le varie chat */
+.chat{
+  position: relative;
+  border-bottom: 0.5px solid rgba(0,0,0, 0.2);
+  height: 60px;
+}
+/* per la scrollbar */
+.section_left{
+  overflow-y: auto;
+}
+/* per la prima chat selezionata */
+.first_chat{
+  background-color: #efefef;
+}
+/* quando passo sopra le altre chat */
+.chat:hover{
+  background-color: #efefef;
+  cursor: pointer;
+}
+/* per il contenitore del messaggio */
+.messages{
+  width: 100%;
+  display: block;
+  margin-top: 5px;
+  overflow: auto;
+}
+/* per il messaggio dell'altro utente e del mio */
+.other_message, .mine_message{
+  min-width: 200px;
+  min-height: 40px;
+  max-width: 300px;
+  word-break: break-all;
+}
+.other_message{
+  margin-left: 30px;
+  float: left;
+}
+.mine_message{
+  margin-right: 30px;
+  float:right;
+}
+/* per il background white */
+.other_message.white{
+  border-radius: 30px;
+  background-color: white;
+}
+/* per il mio messaggio verde */
+.mine_message.green{
+  border-radius: 30px;
+  background-color: #c2f7be;
+  display: block;
+}
+/* per i testi dei messaggi e dell'input text  */
+.other_message p, .mine_message p, .write_message input{
+  padding: 10px;
+  color: black;
+}
+/* clear */
+.other_message:after, .mine_message:after{
+  clear: both;
+  display: table;
+  content: '';
+}
+/* per il contenitore dove scrivere il messaggio da inviare */
+.section_right .write_message{
+  width: 100%;
+  height: 60px;
+  padding: 0 30px;
+  position:absolute;
+  background-color: #efefef;
+  bottom: 0;
+}
+/* per l'input text del messaggio da inviare */
+.section_right .write_message input{
+  height: 50px;
+  margin-top: 5px;
+  border: none;
+  margin-left: 20px;
+  width: 80%;
+  border-radius: 30px;
+}
+/* per le iconcine dello smile e dell'invio messaggio */
+.section_right .write_message i{
+  font-size: 20px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+/* per l'icona dell'invio messaggio */
+.section_right .write_message i.fa-paper-plane{
+  color:black;
+}
+/* per separare l'invio */
+.section_right .write_message .send{
+  margin-left: 80px;
+}
+/* per le scrollbar */
+*::-webkit-scrollbar-thumb {
+   background-color: rgba(0, 0, 0, 0.2);
+}
+*::-webkit-scrollbar {
+  width: 6px;
+  /* height: 6px; */
+}

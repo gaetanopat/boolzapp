@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <!-- per l'header -->
+    <header>
+      <!-- la parte di sinistra -->
+      <div class="header_left">
+        <img class="profile_img" src="img/Immagine.jpg" alt="">
+        <!-- per le icone a destra della parte di sinistra -->
+        <div class="header_left_icons">
+          <i class="far fa-circle"></i>
+          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+      <!-- la parte di destra -->
+      <div class="header_right">
+        <img class="profile_img" src="img/Immagine2.jpg" alt="">
+        <!-- per il nome della persona con cui parliamo e il suo ultimo accesso -->
+        <div class="person">
+          <h4 class="person_name">Francesca</h4>
+          <p class="last_login">Ultimo accesso oggi alle 15:00</p>
+        </div>
+        <!-- per le icone a destra della parte di destra -->
+        <div class="header_right_icons">
+          <i class="fas fa-search"></i>
+          <i class="fas fa-paperclip"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- per la parte di sinistra -->
+    <section class="section_left">
+      <!-- per cercare o creare una nuova chat -->
+      <div class="new_chat">
+        <span><i class="fas fa-search"></i></span><input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+      </div>
+
+      <!-- contenitore di tutte le chat -->
+      <div class="chat_container">
+        <!-- prima chat -->
+        <div class="chat first_chat">
+          <img class="profile_img" src="img/Immagine2.jpg" alt="">
+
+          <div class="person">
+            <h4 class="person_name">Francesca</h4>
+            <p class="person_message">Ciao, come stai?</p>
+          </div>
+
+        </div>
+        <!-- seconda chat -->
+        <div class="chat">
+          <img class="profile_img" src="img/Immagine3.jpg" alt="">
+
+          <div class="person">
+            <h4 class="person_name">Roberta</h4>
+            <p class="person_message">Tutto bene</p>
+          </div>
+
+        </div>
+        <!-- terza chat -->
+        <div class="chat">
+          <img class="profile_img" src="img/Immagine4.jpg" alt="">
+
+          <div class="person">
+            <h4 class="person_name">Angela</h4>
+            <p class="person_message">Sono andata in bici</p>
+          </div>
+
+        </div>
+        <!-- quarta chat -->
+        <div class="chat">
+          <img class="profile_img" src="img/Immagine5.jpg" alt="">
+
+          <div class="person">
+            <h4 class="person_name">Emanuel</h4>
+            <p class="person_message">Sono uscito</p>
+          </div>
+
+        </div>
+        <!-- quinta chat -->
+        <div class="chat">
+          <img class="profile_img" src="img/Immagine6.jpg" alt="">
+
+          <div class="person">
+            <h4 class="person_name">Annalisa</h4>
+            <p class="person_message">Oggi sono andata dal dentista</p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+    <!-- per la parte di destra -->
+    <section class="section_right">
+      <!-- il contenitore totale di tutta la chat -->
+      <div class="container_single_chat">
+        <!-- contenitore dei singoli messaggi -->
+        <div class="messages">
+          <!-- per il messaggio dell'altro utente -->
+          <div class="other_message white">
+            <p>Ciao, come stai?</p>
+          </div>
+        </div>
+
+        <!-- quello che creo tramite jquery per il mio messaggio -->
+        <!-- <div class="messages">
+          <div class="mine_message">
+
+          </div>
+        </div> -->
+
+      </div>
+
+        <div class="write_message">
+          <span><i class="far fa-smile"></i></span>
+          <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+          <span class="send"><i class="fas fa-paper-plane"></i></span>
+        </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
