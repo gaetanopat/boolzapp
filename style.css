@@ -3,44 +3,53 @@
   margin: 0;
   padding: 0;
 }
-p{
-  margin: 0;
+/* per il body */
+body{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
-/* per l'header */
-header{
-  width: 100%;
+/* per l'header di sinistra e di destra */
+.header_left, .header_right{
   background-color: #eeeeee;
-  border: 0.5px solid rgba(0,0,0, 0.1);
+  border-bottom: 0.5px solid rgba(0,0,0, 0.1);
+  height: 60px;
 }
-/* per l'header sinistro e la sezione di sinistra */
+/* header e sezione di sinistra */
 .header_left, .section_left{
-  float:left;
+  float: left;
   width: 30%;
   border-right: 0.5px solid rgba(0,0,0, 0.2);
   position: relative;
 }
-/* altezza dell'header */
-.header_left, .header_right{
-  height:60px;
-}
-/* altezza sezioni */
-.section_left, .section_right{
-  height: 596px;
-}
-/* per l'header destro e la sezione di destra */
+/* header e sezione di destra */
 .header_right, .section_right{
   float: left;
   width: 70%;
   position: relative;
 }
-/* per il contenitore di destra di tutta la chat */
+/* sezione di sinistra e di destra */
+.section_left, .section_right{
+  height: calc(100vh - 60px);
+}
+/* per il contenitore di tutte le chat a sinistra */
+div.chat_container{
+  overflow-y: auto;
+  width: 100%;
+  height: calc(100vh - 110px);
+}
+/* per il container della singola chat con la persona */
 div.container_single_chat{
-  height: 536px;
+  width: 100%;
+  height: calc(100vh - 120px);
   background-image: url('https://i.imgur.com/TnNwdvV.jpg');
   position: relative;
   overflow-y: auto;
+  padding: 20px;
 }
-/* per tutte le immagini del profilo */
+/* per le immagini del profilo */
 img.profile_img{
   width: 50px;
   height: 50px;
@@ -48,19 +57,19 @@ img.profile_img{
   margin-top: 5px;
   margin-left: 30px;
 }
-/* per le icone dell'header, sia della parte di sinistra sia della parte di destra */
-header .header_left_icons, header .header_right_icons{
+/* per il contenitore delle icone */
+.header_left_icons, .header_right_icons{
   position: absolute;
   top: 50%;
   right: 30px;
   transform: translateY(-50%);
 }
-/* per le singole icone dell'header, sia della parte di sinistra sia della parte di destra */
+/* per le singole icone */
 .header_left_icons i, .header_right_icons i{
   font-size: 18px;
   margin-left: 30px;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 /* per il container del nome e dell'ultimo accesso e del nome e dei vari messaggi */
 .person{
@@ -70,33 +79,34 @@ header .header_left_icons, header .header_right_icons{
   left: 100px;
   margin-top: 0;
 }
+/* annullo i margini dei p */
+p{
+  margin: 0;
+}
 /* per il nome della persona */
-.person_name{
+.person .person_name{
   margin: 0;
+  opacity: 0.7;
 }
-/* per il colore un pò più chiaro dell'ultimo accesso e del messaggio delle persone a sinistra */
-.header_right div.person .last_login, .section_left div.chat .person_message{
-  opacity: 0.6;
-  margin: 0;
-}
-/* clear */
-header::after {
-  content: '';
-  clear: both;
-  display: table;
+/* per il colore dell'ultimo accesso */
+.header_right .person .last_login,
+/* per il messaggio della persona a sinistra */
+.person .person_message{
+  opacity: 0.5;
 }
 /* per trovare una chat */
-div.new_chat{
+div.search_chat{
   height: 50px;
   width: 100%;
   padding: 0 30px;
   border-bottom: 0.5px solid rgba(0,0,0, 0.2);
 }
 /* per l'input text */
-div.new_chat input{
+div.search_chat input{
   height: 40px;
   width:80%;
   margin-top: 5px;
+  font-size: 16px;
   border: 0;
   border-radius: 30px;
   margin-left: 20px;
@@ -106,7 +116,7 @@ input:focus{
   outline: none;
 }
 /* per l'iconcina del search */
-div.new_chat i{
+div.search_chat i{
   cursor: pointer;
   font-size: 16px;
   opacity: 0.6;
@@ -116,10 +126,6 @@ div.new_chat i{
   position: relative;
   border-bottom: 0.5px solid rgba(0,0,0, 0.2);
   height: 60px;
-}
-/* per la scrollbar */
-.section_left{
-  overflow-y: auto;
 }
 /* per la prima chat selezionata */
 .first_chat{
@@ -139,27 +145,38 @@ div.new_chat i{
 }
 /* per il messaggio dell'altro utente e del mio */
 .other_message, .mine_message{
-  min-width: 200px;
-  min-height: 40px;
+  width: 200px;
+  height: 40px;
   max-width: 300px;
   word-break: break-all;
+  position: relative;
 }
+/* per l'orario del messaggio */
+.messages .time{
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  opacity: 0.6;
+  font-size: 12px;
+}
+/* per il messaggio dell'altro utente */
 .other_message{
   margin-left: 30px;
   float: left;
 }
+/* per il mio messaggio */
 .mine_message{
   margin-right: 30px;
   float:right;
 }
-/* per il background white */
+/* per il background white del messaggio dell'altro utente */
 .other_message.white{
-  border-radius: 30px;
+  border-radius: 10px;
   background-color: white;
 }
 /* per il mio messaggio verde */
 .mine_message.green{
-  border-radius: 30px;
+  border-radius: 10px;
   background-color: #c2f7be;
   display: block;
 }
@@ -167,12 +184,7 @@ div.new_chat i{
 .other_message p, .mine_message p, .write_message input{
   padding: 10px;
   color: black;
-}
-/* clear */
-.other_message:after, .mine_message:after{
-  clear: both;
-  display: table;
-  content: '';
+  font-size: 16px;
 }
 /* per il contenitore dove scrivere il messaggio da inviare */
 .section_right .write_message{
@@ -197,20 +209,18 @@ div.new_chat i{
   font-size: 20px;
   opacity: 0.6;
   cursor: pointer;
-}
-/* per l'icona dell'invio messaggio */
-.section_right .write_message i.fa-paper-plane{
-  color:black;
+  color: black;
 }
 /* per separare l'invio */
 .section_right .write_message .send{
   margin-left: 80px;
 }
+
 /* per le scrollbar */
 *::-webkit-scrollbar-thumb {
    background-color: rgba(0, 0, 0, 0.2);
 }
 *::-webkit-scrollbar {
   width: 6px;
-  /* height: 6px; */
+  height: 6px;
 }
