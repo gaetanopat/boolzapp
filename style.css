@@ -128,7 +128,7 @@ div.search_chat i{
   height: 60px;
 }
 /* per la prima chat selezionata */
-.first_chat{
+.chat_on{
   background-color: #efefef;
 }
 /* quando passo sopra le altre chat */
@@ -141,15 +141,15 @@ div.search_chat i{
   width: 100%;
   display: block;
   margin-top: 5px;
-  overflow: auto;
 }
 /* per il messaggio dell'altro utente e del mio */
 .other_message, .mine_message{
-  width: 200px;
-  height: 40px;
+  min-width: 200px;
+  min-height: 40px;
   max-width: 300px;
   word-break: break-all;
   position: relative;
+  clear: both;
 }
 /* per l'orario del messaggio */
 .messages .time{
@@ -215,7 +215,36 @@ div.search_chat i{
 .section_right .write_message .send{
   margin-left: 80px;
 }
-
+/* per la freccia in basso e il menu */
+.fa-chevron-down, .menu{
+  font-size: 14px;
+  position: absolute;
+  display: none;
+}
+/* per la freccia verso il basso */
+.fa-chevron-down{
+  top: 10px;
+  right: 10px;
+}
+.menu div{
+  padding: 5px;
+  cursor: pointer;
+}
+/* per visualizzare la freccia verso il basso quando passo sopra il mouse */
+.other_message:hover .fa-chevron-down, .mine_message:hover .fa-chevron-down{
+  display: block;
+}
+.menu{
+  top: 20px;
+  right: -50px;
+  width: 150px;
+  height: 50px;
+  background-color: lightgrey;
+}
+/* classe che mi servirà per visualizzare il menu */
+.menu-on{
+  display: block;
+}
 /* per le scrollbar */
 *::-webkit-scrollbar-thumb {
    background-color: rgba(0, 0, 0, 0.2);
