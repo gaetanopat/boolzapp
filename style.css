@@ -131,6 +131,12 @@ div.search_chat i{
 .chat_on{
   background-color: #efefef;
 }
+.container_single_chat{
+  display: none;
+}
+.active{
+  display: block;
+}
 /* quando passo sopra le altre chat */
 .chat:hover{
   background-color: #efefef;
@@ -141,6 +147,7 @@ div.search_chat i{
   width: 100%;
   display: block;
   margin-top: 5px;
+  min-height: 40px;
 }
 /* per il messaggio dell'altro utente e del mio */
 .other_message, .mine_message{
@@ -236,13 +243,14 @@ div.search_chat i{
 }
 .menu{
   top: 20px;
-  right: -50px;
+  right: -30px;
   width: 150px;
   height: 50px;
+  z-index: 1;
   background-color: lightgrey;
 }
 /* classe che mi servirà per visualizzare il menu */
-.menu-on{
+.menu_on{
   display: block;
 }
 /* per le scrollbar */
